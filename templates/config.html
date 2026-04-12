@@ -1,0 +1,100 @@
+<form class="aufzuege-settings">
+
+  {{#unless isDetail}}
+    <h2>{{localize "AUFZUEGE.config.window.title"}}</h2>
+    <p>{{localize "AUFZUEGE.config.window.description"}}</p>
+
+    <div class="aufzuege-settings__actions">
+      <button type="button" id="new-elevator" class="primary">
+        <i class="fas fa-plus"></i> {{localize "AUFZUEGE.config.window.new"}}
+      </button>
+    </div>
+
+    <hr/>
+
+    {{#if hasElevators}}
+      <ul class="aufzuege-settings__list">
+        {{#each elevators}}
+          <li class="aufzuege-settings__item">
+            <div>
+              <strong>{{this.name}}</strong>
+              <p class="aufzuege-item__meta">{{this._id}}</p>
+            </div>
+            <div class="aufzuege-settings__item-actions">
+              <button type="button" class="edit-elevator" data-id="{{this._id}}"><i class="fas fa-edit"></i> {{localize "AUFZUEGE.config.window.edit"}}</button>
+              <button type="button" class="del-elevator danger" data-id="{{this._id}}"><i class="fas fa-trash"></i> {{localize "AUFZUEGE.config.window.delete"}}</button>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <div class="aufzuege-empty">
+        <p>{{localize "AUFZUEGE.config.window.empty"}}</p>
+      </div>
+    {{/if}}
+
+  {{/unless}}
+
+  {{#if isDetail}}
+    <h2>{{localize "AUFZUEGE.detail.window.title"}}</h2>
+    
+    <div class="form-group">
+      <label>{{localize "AUFZUEGE.detail.window.name"}}</label>
+      <div class="form-fields">
+        <input type="text" id="elevator-name" value="{{name}}" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>{{localize "AUFZUEGE.detail.window.id"}}</label>
+      <div class="form-fields">
+        <input type="text" value="{{elevatorId}}" readonly />
+      </div>
+    </div>
+
+    <div class="aufzuege-settings__actions">
+      <button type="button" id="add-floor" class="primary"><i class="fas fa-plus"></i> {{localize "AUFZUEGE.detail.window.newFloor"}}</button>
+    </div>
+
+    <hr/>
+
+    <h3>{{localize "AUFZUEGE.detail.window.floorList"}}</h3>
+    <p>{{localize "AUFZUEGE.detail.window.floorListDescription"}}</p>
+
+    <ul class="aufzuege-settings__floors">
+      {{#each floors}}
+        <li>
+          <div class="form-group">
+            <label>{{localize "AUFZUEGE.detail.window.name"}}</label>
+            <div class="form-fields">
+              <input type="text" class="floor-field" data-field="fname" data-idx="{{@index}}" value="{{this.fname}}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>{{localize "AUFZUEGE.detail.window.tileRef"}}</label>
+            <div class="form-fields">
+              <input type="text" class="floor-field" data-field="tileRef" data-idx="{{@index}}" value="{{this.tileRef}}" />
+            </div>
+          </div>
+          <div class="aufzuege-settings__actions">
+            <button type="button" class="del-floor danger" data-idx="{{@index}}"><i class="fas fa-trash"></i> {{localize "AUFZUEGE.detail.window.deleteFloor"}}</button>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+
+    {{#unless floors.length}}
+      <div class="aufzuege-empty">
+        <p>{{localize "AUFZUEGE.detail.window.emptyFloors"}}</p>
+      </div>
+    {{/unless}}
+
+    <hr/>
+
+    <div class="aufzuege-settings__actions">
+      <button type="button" id="save-button" class="primary"><i class="fas fa-save"></i> {{localize "AUFZUEGE.detail.window.save"}}</button>
+      <button type="button" id="delete-elevator" class="danger"><i class="fas fa-trash"></i> {{localize "AUFZUEGE.detail.window.delete"}}</button>
+    </div>
+
+  {{/if}}
+</form>

@@ -1,0 +1,37 @@
+{
+  "id": "aufzuege",
+  "title": "Aufzuege!",
+  "description": "Ein einfaches Modul für die Simulation von Aufzügen.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "ChatGPT feat. Tim Rösler"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/aufzuege.js",
+    "scripts/config.js",
+    "scripts/teleport.js"
+  ],
+  "packs": [],
+  "styles": [
+    "styles/settings.css",
+    "styles/elevator.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ]
+}

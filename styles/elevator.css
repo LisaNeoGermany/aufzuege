@@ -1,0 +1,48 @@
+.application.aufzuege-dialog-app .aufzuege-panel {
+  background: var(--color-bg-option, rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--color-border-light-tertiary, rgba(255, 255, 255, 0.15));
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  color: var(--color-text-light-1, #f0f0f0);
+  text-align: center;
+}
+
+.application.aufzuege-dialog-app .aufzuege-panel p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.application.aufzuege-dialog-app .aufzuege-floor-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.application.aufzuege-dialog-app .aufzuege-floor-btn {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--color-border-light-primary, rgba(255, 255, 255, 0.2));
+  border-radius: 6px;
+  background: var(--color-bg-secondary, rgba(255, 255, 255, 0.08));
+  color: var(--color-text-light-1, #f0f0f0);
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.application.aufzuege-dialog-app .aufzuege-floor-btn:hover {
+  border-color: var(--color-border-light-primary, rgba(255, 255, 255, 0.35));
+  background: var(--color-bg-option, rgba(255, 255, 255, 0.15));
+}
+
+.application.aufzuege-dialog-app .aufzuege-floor-btn:focus-visible {
+  outline: 2px solid var(--color-border-highlight, #ffdd99);
+  outline-offset: 2px;
+}
+
+.application.aufzuege-dialog-app .dialog-buttons,
+.application.aufzuege-dialog-app footer.dialog-buttons {
+  display: none !important;
+}

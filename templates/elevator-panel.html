@@ -1,0 +1,13 @@
+<section class="aufzuege-panel">
+  <p>{{instruction}}</p>
+</section>
+<div class="aufzuege-floor-stack">
+  {{#each floors as |floor|}}
+    <button type="button"
+            class="aufzuege-floor-btn"
+            data-action="chooseFloor"
+            data-index="{{floor.index}}">
+      {{floor.label}}
+    </button>
+  {{/each}}
+</div>
